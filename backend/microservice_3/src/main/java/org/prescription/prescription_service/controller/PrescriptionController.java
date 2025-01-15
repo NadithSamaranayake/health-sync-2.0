@@ -35,13 +35,13 @@ public class PrescriptionController {
     }
 
     // Retrieve Prescriptions by Patient ID
-    @GetMapping("/prescriptions/patients/{patientId}")
+    @GetMapping("/patients/{patientId}/prescriptions")
     public List<Prescription> getPrescriptionsByPatientId(@PathVariable int patientId) {
         return prescriptionService.getPrescriptionsByPatientId(patientId);
     }
 
     // Retrieve Prescriptions by Doctor ID
-    @GetMapping("/prescriptions/doctors/{doctorId}")
+    @GetMapping("/doctors/{doctorId}/prescriptions")
     public List<Prescription> getPrescriptionsByDoctorId(@PathVariable int doctorId) {
         return prescriptionService.getPrescriptionsByDoctorId(doctorId);
     }
@@ -67,8 +67,8 @@ public class PrescriptionController {
     }
 
     // Filter Prescriptions by Medicine
-    @GetMapping("/prescriptions/medicine/{medicine}")
-    public List<Prescription> getPrescriptionsByMedicine(@PathVariable String medicine) {
+    @GetMapping("/medicines/prescriptions")
+    public List<Prescription> getPrescriptionsByMedicine(@RequestParam String medicine) {
         return prescriptionService.getPrescriptionsByMedicine(medicine);
     }
 
