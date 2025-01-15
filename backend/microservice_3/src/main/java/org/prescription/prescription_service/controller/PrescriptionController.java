@@ -28,9 +28,8 @@ public class PrescriptionController {
         return prescriptionService.getAllPrescriptions();
     }
 
-    // Retrieve Prescription by ID
     @GetMapping("/prescriptions/{prescriptionId}")
-    public Prescription getPrescriptionById(@RequestParam int prescriptionId) {
+    public Prescription getPrescriptionById(@PathVariable int prescriptionId) {
         return prescriptionService.getPrescriptionById(prescriptionId);
     }
 
